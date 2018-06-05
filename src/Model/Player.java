@@ -1,20 +1,36 @@
 package Model;
 
+import Interface.IDrawManager;
 import math.geom2d.Point2D;
+import math.geom2d.Shape2D;
 import math.geom2d.Vector2D;
 
 import java.util.List;
 
-public class Player extends Intractable {
+public class Player extends Interactable {
     private List<Spell> spellList;
 
-    public Player(float speed, Vector2D movement, Point2D location, int health, int currentHealth) {
-        super(speed, movement, location, health, currentHealth);
+    /**
+     * @param location  : current location of the interactable
+     * @param rotation  : current rotation of the interactable
+     * @param maxHealth : initial health of the interactable
+     * @param hitBoxes  : collection of shapes which form the hit-box relative to the origin
+     */
+    public Player(Point2D location, float rotation, int maxHealth, List<Shape2D> hitBoxes) {
+        super(location, rotation, maxHealth, hitBoxes);
+    }
+
+
+
+    @Override
+    public void draw(IDrawManager iDrawManager) {
+
     }
 
     @Override
-    public void hit(){
+    void update(float deltaTime) {
 
     }
+
 
 }
