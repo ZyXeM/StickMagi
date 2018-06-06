@@ -1,14 +1,16 @@
 package Model;
 
+import Enummeration.EType;
 import Interface.IDrawManager;
 import math.geom2d.Point2D;
 import math.geom2d.Shape2D;
 import math.geom2d.Vector2D;
 import java.util.List;
+import java.util.Observable;
 
-public abstract class Interactable {
+public abstract class Interactable extends Observable {
 
-
+    private int ID;
     private Vector2D movement;
     private Point2D location;
     private float rotation;
@@ -35,7 +37,7 @@ public abstract class Interactable {
      * @param damage
      * @param damageType
      */
-    public void hit(float damage, Enum.EType damageType){}
+    public void hit(float damage, EType damageType){}
 
 
     /**
@@ -109,5 +111,13 @@ public abstract class Interactable {
 
     public void setMaxHealth(int maxHealth) {
         this.maxHealth = maxHealth;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 }
