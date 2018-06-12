@@ -4,8 +4,7 @@ import Interface.IDrawManager;
 import Interface.IUseable;
 import math.geom2d.Point2D;
 import math.geom2d.Shape2D;
-import math.geom2d.Vector2D;
-import Enum.EType;
+import Enummeration.EType;
 
 import java.util.List;
 

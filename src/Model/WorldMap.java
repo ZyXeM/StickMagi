@@ -2,11 +2,16 @@ package Model;
 
 import Interface.IDrawManager;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class WorldMap {
+public class WorldMap implements Observer {
     private List<Player> players;
-    private List<Object> objects;
+    private List<InGameObject> inGameObjects;
     private IDrawManager drawManager;
 
 
@@ -23,12 +28,12 @@ public class WorldMap {
         this.players = players;
     }
 
-    public List<Object> getObjects() {
-        return objects;
+    public List<InGameObject> getInGameObjects() {
+        return inGameObjects;
     }
 
-    public void setObjects(List<Object> objects) {
-        this.objects = objects;
+    public void setInGameObjects(List<InGameObject> inGameObjects) {
+        this.inGameObjects = inGameObjects;
     }
 
     public IDrawManager getDrawManager() {
@@ -37,5 +42,21 @@ public class WorldMap {
 
     public void setDrawManager(IDrawManager drawManager) {
         this.drawManager = drawManager;
+    }
+
+    @Override
+    public void update(Observable o, java.lang.Object arg) {
+        if(o instanceof Interactable){
+
+                Field field = Arrays.stream(o.getClass().getFields()).filter(item -> item.equals(arg)).findFirst().orElse(null);
+
+
+
+
+
+
+        }
+
+
     }
 }

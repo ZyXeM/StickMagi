@@ -8,7 +8,7 @@ import math.geom2d.Vector2D;
 
 import java.util.List;
 
-public class Object extends Interactable {
+public class InGameObject extends Interactable {
 
 
     /**
@@ -17,7 +17,7 @@ public class Object extends Interactable {
      * @param maxHealth : initial health of the interactable
      * @param hitBoxes  : collection of shapes which form the hit-box relative to the origin
      */
-    public Object(Point2D location, float rotation, int maxHealth, List<Shape2D> hitBoxes) {
+    public InGameObject(Point2D location, float rotation, int maxHealth, List<Shape2D> hitBoxes) {
         super(location, rotation, maxHealth, hitBoxes);
     }
 
